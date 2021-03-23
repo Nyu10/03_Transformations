@@ -48,7 +48,7 @@ def make_rotZ( theta ):
     ident(matrix)
     matrix[0][0]=math.cos(theta)
     matrix[1][0]=-1* math.sin(theta)
-    matrix[1][0]=math.sin(theta)
+    matrix[0][1]=math.sin(theta)
     matrix[1][1]=math.cos(theta)
     return matrix
 

@@ -45,12 +45,10 @@ def parse_file( fname, points, transform, screen, color ):
             elif current_line=="scale":
                 xyz = file_object.readline().rstrip('\n')
                 arr = xyz.split(" ")
-                print(arr)
                 sx=int(arr[0])
                 sy=int(arr[1])
                 sz=int(arr[2])
                 scale_matrix=make_scale(sx,sy,sz)
-                print(scale_matrix)
                 matrix_mult(scale_matrix,transform)
             elif current_line=="move":#translate
                 xyz = file_object.readline().rstrip('\n')
@@ -76,7 +74,6 @@ def parse_file( fname, points, transform, screen, color ):
                 matrix_mult(transform,points)
             elif current_line=="display":
                 clear_screen(screen)
-                print(points)
                 draw_lines(points, screen, color)
                 display(screen)
             elif current_line=="save":
